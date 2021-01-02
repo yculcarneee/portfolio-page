@@ -2,6 +2,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import '../App.css';
 import {Card, Image, Container, Row, Nav, Form, Button, Col} from 'react-bootstrap';   
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+
 export default function Contact() {
     return(
         <div className="App">
@@ -39,6 +43,20 @@ export default function Contact() {
                                     </Col>
                                 </Form.Group>
                             </Form>
+                        </Row>
+                        <Row className="justify-content-center" style={{marginTop: '3vh'}}>
+                            <a className="pr-4 pl-4" target="_blank" href="https://www.github.com/yculcarneee" style={{textDecoration: 'none', color: 'inherit'}}>
+                                <FontAwesomeIcon icon={faGithub} size="2x"/>
+                            </a>
+                            <a className="pr-4 pl-4" target="_blank" href="https://www.linkedin.com/in/yashkulkarni97" style={{textDecoration: 'none', color: 'inherit'}}>
+                                <FontAwesomeIcon icon={faLinkedin} size="2x" />
+                            </a>
+                            <a className="pr-4 pl-4" target="_blank" href="mailto:yukulkar@uci.edu" style={{textDecoration: 'none', color: 'inherit'}}>
+                                <FontAwesomeIcon icon={faEnvelope} size="2x" />
+                            </a>
+                        </Row>
+                        <Row className="justify-content-center" style={{marginTop: '3vh'}}>
+                            <footer style={{color: 'white', fontSize: '0.75rem'}}> © Yash Kulkarni. All rights reserved. <br/> Designed by Yash Kulkarni </footer>
                         </Row>
                     </Container>
                 </Card.Body>

@@ -12,9 +12,9 @@ export default function Projects() {
                         <Row style={{justifyContent: 'center', marginTop: '3vh'}}>
                             <h3> Projects </h3>
                         </Row>
-                        <Row style={{justifyContent: 'center', marginTop: '3vh', marginBottom: '3vh'}}>
+                        <Row style={{justifyContent: 'center', marginTop: '3vh'}}>
                             <CardDeck>
-                                <Card style = {{color: 'black', width: '20rem'}}>
+                                <Card style = {{color: 'black', marginBottom: '5vh', width: '20rem'}}>
                                     <Card.Img variant="top" src="http://placekitten.com/96/54" />
                                     <Card.Body>
                                         <Card.Title>Dreamcatcher</Card.Title>
@@ -27,7 +27,7 @@ export default function Projects() {
                                         <Card.Link href="https://youtu.be/4_YIT2BbuLA">Demo</Card.Link>
                                     </Card.Footer>
                                 </Card>
-                                <Card style = {{color: 'black', width: '20rem'}}>
+                                <Card style = {{color: 'black', marginBottom: '5vh', width: '20rem'}}>
                                     <Card.Img variant="top" src="http://placekitten.com/96/54" />
                                     <Card.Body>
                                         <Card.Title>ASL Letter Classifier</Card.Title>
