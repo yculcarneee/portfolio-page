@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../App.css';
-import {Card, Image, Container, Row, Nav, Form, Button, Col} from 'react-bootstrap';   
+import {Card, Container, Row, Form, Button, Col} from 'react-bootstrap';   
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
@@ -9,13 +9,13 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 export default function Contact() {
     return(
         <div className="App">
-            <Card style={{backgroundColor: '#e76f51', color: 'white'}}>
+            <Card className="contact-card">
                 <Card.Body id = "contact-card">
                     <Container fluid>
-                        <Row style={{justifyContent: 'center', marginTop: '3vh'}}>
+                        <Row className="heading-row" style={{justifyContent: 'center'}}>
                             <h3> Contact </h3>
                         </Row>
-                        <Row style={{justifyContent: 'center', marginTop: '3vh'}}>
+                        <Row className="heading-row" style={{justifyContent: 'center'}}>
                             <Form>
                                 <Form.Group as={Row} controlId="formName">
                                     <Form.Label column sm={4}>Name</Form.Label>
@@ -44,19 +44,19 @@ export default function Contact() {
                                 </Form.Group>
                             </Form>
                         </Row>
-                        <Row className="justify-content-center" style={{marginTop: '3vh'}}>
-                            <a className="pr-4 pl-4" target="_blank" href="https://www.github.com/yculcarneee" style={{textDecoration: 'none', color: 'inherit'}}>
+                        <Row className="justify-content-center heading-row">
+                            <a className="pr-4 pl-4 contact-icon" target="_blank" href="https://www.github.com/yculcarneee">
                                 <FontAwesomeIcon icon={faGithub} size="2x"/>
                             </a>
-                            <a className="pr-4 pl-4" target="_blank" href="https://www.linkedin.com/in/yashkulkarni97" style={{textDecoration: 'none', color: 'inherit'}}>
+                            <a className="pr-4 pl-4 contact-icon" target="_blank" href="https://www.linkedin.com/in/yashkulkarni97">
                                 <FontAwesomeIcon icon={faLinkedin} size="2x" />
                             </a>
-                            <a className="pr-4 pl-4" target="_blank" href="mailto:yukulkar@uci.edu" style={{textDecoration: 'none', color: 'inherit'}}>
+                            <a className="pr-4 pl-4 contact-icon" target="_blank" href="mailto:yukulkar@uci.edu">
                                 <FontAwesomeIcon icon={faEnvelope} size="2x" />
                             </a>
                         </Row>
-                        <Row className="justify-content-center" style={{marginTop: '3vh'}}>
-                            <footer style={{color: 'white', fontSize: '0.75rem'}}> © Yash Kulkarni. All rights reserved. <br/> Designed by Yash Kulkarni </footer>
+                        <Row className="justify-content-center heading-row">
+                            <footer className="footer-text"> © Yash Kulkarni. All rights reserved. <br/> Designed by Yash Kulkarni </footer>
                         </Row>
                     </Container>
                 </Card.Body>

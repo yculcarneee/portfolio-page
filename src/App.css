@@ -72,6 +72,21 @@
   color: white;
 }
 
+.contact-card {
+  background-color: #e76f51;
+  color: white;
+}
+
+.contact-icon {
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-text {
+  color: white;
+  font-size: 0.75rem;
+}
+
 /* .section-top {
   padding-top: 60px;
 } */
