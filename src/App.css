@@ -62,10 +62,14 @@
   color: white;
 }
 
-.experience-info-card {
+.info-card {
   color: black;
   margin-bottom: 5vh;
-  width: 55rem;
+}
+
+.projects-card {
+  background-color: #023e8a;
+  color: white;
 }
 
 /* .section-top {

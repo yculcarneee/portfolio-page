@@ -1,21 +1,23 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../App.css';
-import {Card, Image, Container, Row, Nav, CardDeck} from 'react-bootstrap';   
+import {Card, Container, Row, CardDeck} from 'react-bootstrap';  
+
+import Dreamcatcher from "../assets/images/dreamcatcher.png"
+import ASL from "../assets/images/asl-letter-classifier.png"
 
 export default function Projects() {
     return(
         <div className="App">
-            <Card style={{backgroundColor: '#023e8a', color: 'white'}}>
+            <Card className="projects-card">
                 <Card.Body id = "projects-card">
-                    {/* <div id="projects" style={{paddingTop: '50px'}}></div> */}
-                    <Container className="section-top">
-                        <Row style={{justifyContent: 'center', marginTop: '3vh'}}>
+                    <Container>
+                        <Row className="heading-row" style={{justifyContent: 'center'}}>
                             <h3> Projects </h3>
                         </Row>
-                        <Row style={{justifyContent: 'center', marginTop: '3vh'}}>
+                        <Row className="heading-row" style={{justifyContent: 'center'}}>
                             <CardDeck>
-                                <Card style = {{color: 'black', marginBottom: '5vh', width: '20rem'}}>
-                                    <Card.Img variant="top" src="http://placekitten.com/96/54" />
+                                <Card className="info-card" style={{width: '20rem', marginBottom: '5vh'}}>
+                                    <Card.Img variant="top" src={Dreamcatcher}/>
                                     <Card.Body>
                                         <Card.Title>Dreamcatcher</Card.Title>
                                         <Card.Text>
@@ -27,8 +29,8 @@ export default function Projects() {
                                         <Card.Link href="https://youtu.be/4_YIT2BbuLA">Demo</Card.Link>
                                     </Card.Footer>
                                 </Card>
-                                <Card style = {{color: 'black', marginBottom: '5vh', width: '20rem'}}>
-                                    <Card.Img variant="top" src="http://placekitten.com/96/54" />
+                                <Card className="info-card" style={{width: '20rem', marginBottom: '5vh'}}>
+                                    <Card.Img variant="top" src={ASL} height="180"/>
                                     <Card.Body>
                                         <Card.Title>ASL Letter Classifier</Card.Title>
                                         <Card.Text>

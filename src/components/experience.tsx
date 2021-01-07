@@ -15,7 +15,7 @@ export default function Experience() {
                             <h3> Experience </h3>
                         </Row>
                         <Row className="heading-row" style={{justifyContent: 'center'}}>
-                            <Card className="experience-info-card">
+                            <Card className="info-card" style={{width: '55rem'}}>
                                 <Media>
                                     <Image className="align-self-center m-3 m-sm-4 m-md-4 m-lg-4 m-xl-4" src={AWS} width="100" height="60" alt="Amazon Web Services"/>
                                     <Media.Body className="mr-3 m-sm-4 m-md-4 m-lg-4 m-xl-4 p-3">
@@ -29,7 +29,7 @@ export default function Experience() {
                                     </Media.Body>
                                 </Media>
                             </Card>
-                            <Card className="experience-info-card">
+                            <Card className="info-card" style={{width: '55rem'}}>
                                 <Media>
                                     <Image className="align-self-center m-3 m-sm-4 m-md-4 m-lg-4 m-xl-4" src={CP} width="100" height="100" alt="Collegepond"/>
                                     <Media.Body className="mr-3 m-sm-4 m-md-4 m-lg-4 m-xl-4 p-3">
