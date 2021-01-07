@@ -57,6 +57,17 @@
   color: white;
 }
 
+.experience-card {
+  background-color: #2a9d8f;
+  color: white;
+}
+
+.experience-info-card {
+  color: black;
+  margin-bottom: 5vh;
+  width: 55rem;
+}
+
 /* .section-top {
   padding-top: 60px;
 } */

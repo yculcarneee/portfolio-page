@@ -1,24 +1,23 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../App.css';
-import {Card, Image, Container, Row, Button, Col, Media} from 'react-bootstrap';   
+import {Card, Image, Container, Row, Media} from 'react-bootstrap'; 
+
+import AWS from '../assets/images/amazon-web-services.png'
+import CP from '../assets/images/collegepond.png'
 
 export default function Experience() {
     return(
         <div>
-            <Card style={{backgroundColor: '#2a9d8f', color: 'white'}}>
+            <Card className="experience-card">
                 <Card.Body id = "experience-card">
                     <Container>
-                        <Row style={{justifyContent: 'center', marginTop: '3vh'}}>
+                        <Row className="heading-row" style={{justifyContent: 'center'}}>
                             <h3> Experience </h3>
                         </Row>
-                        <Row style={{justifyContent: 'center', marginTop: '3vh'}}>
-                            <Card style = {{color: 'black', marginBottom: '5vh', width: '55rem'}}>
+                        <Row className="heading-row" style={{justifyContent: 'center'}}>
+                            <Card className="experience-info-card">
                                 <Media>
-                                    <img
-                                        className="align-self-center m-3 m-sm-4 m-md-4 m-lg-4 m-xl-4"
-                                        src="http://placekitten.com/100/100"
-                                        alt="Amazon Web Services"
-                                    />
+                                    <Image className="align-self-center m-3 m-sm-4 m-md-4 m-lg-4 m-xl-4" src={AWS} width="100" height="60" alt="Amazon Web Services"/>
                                     <Media.Body className="mr-3 m-sm-4 m-md-4 m-lg-4 m-xl-4 p-3">
                                         <h5>Amazon Web Services</h5>
                                         <p>
@@ -30,13 +29,9 @@ export default function Experience() {
                                     </Media.Body>
                                 </Media>
                             </Card>
-                            <Card style = {{color: 'black', marginBottom: '5vh', width: '55rem'}}>
+                            <Card className="experience-info-card">
                                 <Media>
-                                    <img
-                                        className="align-self-center m-3 m-sm-4 m-md-4 m-lg-4 m-xl-4"
-                                        src="http://placekitten.com/100/100"
-                                        alt="Collegepond"
-                                    />
+                                    <Image className="align-self-center m-3 m-sm-4 m-md-4 m-lg-4 m-xl-4" src={CP} width="100" height="100" alt="Collegepond"/>
                                     <Media.Body className="mr-3 m-sm-4 m-md-4 m-lg-4 m-xl-4 p-3">
                                         <h5>Collegepond</h5>
                                         <p>

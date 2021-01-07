@@ -10,7 +10,7 @@ export default function About() {
                 <Card.Body id = 'about-card'>
                     <Container>
                         <Row style={{justifyContent: 'center'}}>
-                            <Image src={Profile} width="155px" height="140px" roundedCircle={true}/>
+                            <Image src={Profile} width="155px" height="140px" roundedCircle={true} alt="Yash Kulkarni"/>
                         </Row>
                         <Row className="heading-row" style={{justifyContent: 'center'}}>
                             <h2>Yash Kulkarni</h2>
