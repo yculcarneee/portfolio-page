@@ -1,20 +1,21 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../App.css';
-import {Card, Image, Container, Row, Nav} from 'react-bootstrap';   
+import {Card, Image, Container, Row} from 'react-bootstrap';   
+import Profile from "../assets/images/profile.jpeg"
 
 export default function About() {
     return(
         <div className="App">
-            <Card style={{backgroundColor: '#e63946', color: 'white'}}>
+            <Card className="about-card">
                 <Card.Body id = 'about-card'>
-                    <Container className="section-top">
-                        <Row style={{alignItems: 'center', justifyContent: 'center'}}>
-                            <Image src="http://placekitten.com/150/150" roundedCircle={true}/>
+                    <Container>
+                        <Row style={{justifyContent: 'center'}}>
+                            <Image src={Profile} width="155px" height="140px" roundedCircle={true}/>
                         </Row>
-                        <Row style={{justifyContent: 'center', marginTop: '3vh'}}>
+                        <Row className="heading-row" style={{justifyContent: 'center'}}>
                             <h2>Yash Kulkarni</h2>
                         </Row>
-                        <Row style={{marginTop: '3vh', marginBottom: '3vh'}}>
+                        <Row className="about-text">
                             <p>
                                 Hello, I'm Yash, a software developer with experience in development using C++ and Python and web technologies such as React, Node.js, Express, etc.                                 
                                 <br/> <br/>
