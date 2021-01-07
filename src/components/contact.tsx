@@ -45,13 +45,13 @@ export default function Contact() {
                             </Form>
                         </Row>
                         <Row className="justify-content-center heading-row">
-                            <a className="pr-4 pl-4 contact-icon" target="_blank" href="https://www.github.com/yculcarneee">
+                            <a className="pr-4 pl-4 contact-icon" target="_blank" rel="noreferrer" href="https://www.github.com/yculcarneee">
                                 <FontAwesomeIcon icon={faGithub} size="2x"/>
                             </a>
-                            <a className="pr-4 pl-4 contact-icon" target="_blank" href="https://www.linkedin.com/in/yashkulkarni97">
+                            <a className="pr-4 pl-4 contact-icon" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/yashkulkarni97">
                                 <FontAwesomeIcon icon={faLinkedin} size="2x" />
                             </a>
-                            <a className="pr-4 pl-4 contact-icon" target="_blank" href="mailto:yukulkar@uci.edu">
+                            <a className="pr-4 pl-4 contact-icon" target="_blank" rel="noreferrer" href="mailto:yukulkar@uci.edu">
                                 <FontAwesomeIcon icon={faEnvelope} size="2x" />
                             </a>
                         </Row>
