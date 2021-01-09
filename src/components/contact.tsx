@@ -5,8 +5,24 @@ import {Card, Container, Row, Form, Button, Col} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { useState } from "react";
+
 
 export default function Contact() {
+
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [message, setMessage] = useState('')
+
+    const submitForm = async(e: React.FormEvent) => {
+
+        e.preventDefault()
+
+        console.log(name)
+        console.log(email)
+        console.log(message)
+    }    
+
     return(
         <div className="App">
             <Card className="contact-card">
@@ -16,23 +32,23 @@ export default function Contact() {
                             <h3> Contact </h3>
                         </Row>
                         <Row className="heading-row" style={{justifyContent: 'center'}}>
-                            <Form>
+                            <Form onSubmit={submitForm}>
                                 <Form.Group as={Row} controlId="formName">
                                     <Form.Label column sm={4}>Name</Form.Label>
                                     <Col sm={8}>            
-                                        <Form.Control placeholder="Enter your name..." />
+                                        <Form.Control value={name} onChange={e => setName(e.target.value)} placeholder="Enter your name..." />
                                     </Col>
                                 </Form.Group>
                                 <Form.Group as={Row} controlId="formEmail">
                                     <Form.Label column sm={4}>Email</Form.Label>
                                     <Col sm={8}>
-                                        <Form.Control type="email" placeholder="Enter your email..." />
+                                        <Form.Control value={email} onChange={e => setEmail(e.target.value)} type="email" placeholder="Enter your email..." />
                                     </Col>
                                 </Form.Group>
                                 <Form.Group as={Row} controlId="formMessage">                                   
                                     <Form.Label column sm={4}>Message</Form.Label>
                                     <Col sm={8}>
-                                        <Form.Control as="textarea" rows={5} placeholder="Enter your message..." />
+                                        <Form.Control as="textarea" onChange={e => setMessage(e.target.value)} value={message} rows={5} placeholder="Enter your message..." />
                                     </Col>
                                 </Form.Group>    
                                 <Form.Group as={Row}>
