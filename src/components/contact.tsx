@@ -45,9 +45,18 @@ export default function Contact() {
     }
 
     const submitForm = async(e: React.FormEvent) => {
-        e.preventDefault()
 
         checkValidity();
+
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: JSON.stringify({ "form-name": "contact", "name": name, "email": email, "message": message })
+          })
+        .then(() => alert("Success!"))
+        .catch(error => alert(error));
+
+        e.preventDefault()
     }    
 
     return(
