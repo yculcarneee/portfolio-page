@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../App.css';
 import {Card, Container, Row, Form, Button, Col} from 'react-bootstrap';   
+import isEmail from 'validator/es/lib/isEmail';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
@@ -11,16 +12,42 @@ import { useState } from "react";
 export default function Contact() {
 
     const [name, setName] = useState('')
+    const [nameError, setNameError] = useState(false)
+
     const [email, setEmail] = useState('')
+    const [emailError, setEmailError] = useState(false)
+
     const [message, setMessage] = useState('')
+    const [messageError, setMessageError] = useState(false)
+
+    const checkValidity = () => {
+        if(name.length < 4) {
+            setNameError(true)
+        }
+        else {
+            setNameError(false)
+        }
+
+        if(!isEmail(email)) {
+            setEmailError(true)
+        }
+        else {
+            setEmailError(false)
+        }
+
+        if(message.length < 4) {
+            setMessageError(true)
+        }
+        else {
+            setMessageError(false)
+        }
+
+    }
 
     const submitForm = async(e: React.FormEvent) => {
-
         e.preventDefault()
 
-        console.log(name)
-        console.log(email)
-        console.log(message)
+        checkValidity();
     }    
 
     return(
@@ -32,23 +59,32 @@ export default function Contact() {
                             <h3> Contact </h3>
                         </Row>
                         <Row className="heading-row" style={{justifyContent: 'center'}}>
-                            <Form onSubmit={submitForm}>
+                            <Form noValidate onSubmit={submitForm}>
                                 <Form.Group as={Row} controlId="formName">
                                     <Form.Label column sm={4}>Name</Form.Label>
                                     <Col sm={8}>            
-                                        <Form.Control value={name} onChange={e => setName(e.target.value)} placeholder="Enter your name..." />
+                                        <Form.Control value={name} onChange={e => setName(e.target.value)} placeholder="Enter your name..." isInvalid={nameError}/ >
+                                        <Form.Control.Feedback tooltip type="invalid">
+                                          Please enter a name.
+                                        </Form.Control.Feedback>
                                     </Col>
                                 </Form.Group>
                                 <Form.Group as={Row} controlId="formEmail">
                                     <Form.Label column sm={4}>Email</Form.Label>
                                     <Col sm={8}>
-                                        <Form.Control value={email} onChange={e => setEmail(e.target.value)} type="email" placeholder="Enter your email..." />
+                                        <Form.Control value={email} onChange={e => setEmail(e.target.value)} type="email" placeholder="Enter your email..." isInvalid={emailError}/>
+                                        <Form.Control.Feedback tooltip type="invalid">
+                                          Please enter a valid email.
+                                        </Form.Control.Feedback>
                                     </Col>
                                 </Form.Group>
                                 <Form.Group as={Row} controlId="formMessage">                                   
                                     <Form.Label column sm={4}>Message</Form.Label>
                                     <Col sm={8}>
-                                        <Form.Control as="textarea" onChange={e => setMessage(e.target.value)} value={message} rows={5} placeholder="Enter your message..." />
+                                        <Form.Control as="textarea" onChange={e => setMessage(e.target.value)} value={message} rows={5} placeholder="Enter your message..." isInvalid={messageError}/>
+                                        <Form.Control.Feedback tooltip type="invalid">
+                                          Please enter a message.
+                                        </Form.Control.Feedback>
                                     </Col>
                                 </Form.Group>    
                                 <Form.Group as={Row}>
