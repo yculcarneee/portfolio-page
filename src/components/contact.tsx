@@ -11,6 +11,8 @@ import { useState } from "react";
 
 export default function Contact() {
 
+    // const [valid, setValid] = useState(false)
+
     const [name, setName] = useState('')
     const [nameError, setNameError] = useState(false)
 
@@ -21,46 +23,81 @@ export default function Contact() {
     const [messageError, setMessageError] = useState(false)
 
     const checkValidity = () => {
-        if(name.length < 4) {
-            setNameError(true)
-        }
-        else {
-            setNameError(false)
-        }
+        // return new Promise((resolve, reject) => {
+            let isError = false;
 
-        if(!isEmail(email)) {
-            setEmailError(true)
-        }
-        else {
-            setEmailError(false)
-        }
+            if(name.length < 4) {
+                isError = true;
+                setNameError(true)
+            }
+            else {
+                setNameError(false)
+            }
 
-        if(message.length < 4) {
-            setMessageError(true)
-        }
-        else {
-            setMessageError(false)
-        }
+            if(!isEmail(email)) {
+                isError = true;
+                setEmailError(true)
+            }
+            else {
+                setEmailError(false)
+            }
 
+            if(message.length < 4) {
+                isError = true;
+                setMessageError(true)
+            }
+            else {
+                setMessageError(false)
+            }
+
+            return isError;
+        //    resolve(isError)
+        // })
     }
     
-    const encode = (data: any) => {
-    return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&");
-    }
+// const encode = (data: any) => {
+//     return Object.keys(data)
+//         .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+//         .join("&");
+// }
 
-    const submitForm = (e: React.FormEvent) => {
+    const submitForm = async(e: React.FormEvent) => {
 
-        checkValidity();
+        if(checkValidity()) {
+            setName('')
+            setEmail('')
+            setMessage('')
+        }
+        
+        // checkValidity().then((res) => {
+        //     if(res) {    
+        //         fetch("/", {
+        //             method: "POST",
+        //             headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        //             body: encode({ "form-name": "contact", "name": name, "email": email, "message": message })
+        //         })
+        //         .then(() => alert("Success!"))
+        //         .catch(error => alert(error));
 
-        fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({ "form-name": "contact", "name": name, "email": email, "message": message })
-          })
-        .then(() => alert("Success!"))
-        .catch(error => alert(error));
+        //         setName('')
+        //         setEmail('')
+        //         setMessage('')
+        //     }
+        // })
+
+        // if(res) {    
+        //     fetch("/", {
+        //         method: "POST",
+        //         headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        //         body: encode({ "form-name": "contact", "name": name, "email": email, "message": message })
+        //     })
+        //     .then(() => alert("Success!"))
+        //     .catch(error => alert(error));
+
+        //     setName('')
+        //     setEmail('')
+        //     setMessage('')
+        // }
 
         e.preventDefault()
     }    
