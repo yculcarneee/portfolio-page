@@ -75,6 +75,7 @@ export default function Contact() {
                         </Row>
                         <Row className="heading-row" style={{justifyContent: 'center'}}>
                             <Form noValidate onSubmit={submitForm}>
+                                <input type="hidden" name="form-name" value="contact" />
                                 <Form.Group as={Row} controlId="formName">
                                     <Form.Label column sm={4}>Name</Form.Label>
                                     <Col sm={8}>            
