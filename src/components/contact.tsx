@@ -50,7 +50,7 @@ export default function Contact() {
         .join("&");
     }
 
-    const submitForm = async(e: React.FormEvent) => {
+    const submitForm = (e: React.FormEvent) => {
 
         checkValidity();
 
@@ -78,7 +78,7 @@ export default function Contact() {
                                 <Form.Group as={Row} controlId="formName">
                                     <Form.Label column sm={4}>Name</Form.Label>
                                     <Col sm={8}>            
-                                        <Form.Control value={name} onChange={e => setName(e.target.value)} placeholder="Enter your name..." isInvalid={nameError}/ >
+                                        <Form.Control name="name" value={name} onChange={e => setName(e.target.value)} placeholder="Enter your name..." isInvalid={nameError}/ >
                                         <Form.Control.Feedback tooltip type="invalid">
                                           Please enter a name.
                                         </Form.Control.Feedback>
@@ -87,7 +87,7 @@ export default function Contact() {
                                 <Form.Group as={Row} controlId="formEmail">
                                     <Form.Label column sm={4}>Email</Form.Label>
                                     <Col sm={8}>
-                                        <Form.Control value={email} onChange={e => setEmail(e.target.value)} type="email" placeholder="Enter your email..." isInvalid={emailError}/>
+                                        <Form.Control name="email" value={email} onChange={e => setEmail(e.target.value)} type="email" placeholder="Enter your email..." isInvalid={emailError}/>
                                         <Form.Control.Feedback tooltip type="invalid">
                                           Please enter a valid email.
                                         </Form.Control.Feedback>
@@ -96,7 +96,7 @@ export default function Contact() {
                                 <Form.Group as={Row} controlId="formMessage">                                   
                                     <Form.Label column sm={4}>Message</Form.Label>
                                     <Col sm={8}>
-                                        <Form.Control as="textarea" onChange={e => setMessage(e.target.value)} value={message} rows={5} placeholder="Enter your message..." isInvalid={messageError}/>
+                                        <Form.Control name="message" as="textarea" onChange={e => setMessage(e.target.value)} value={message} rows={5} placeholder="Enter your message..." isInvalid={messageError}/>
                                         <Form.Control.Feedback tooltip type="invalid">
                                           Please enter a message.
                                         </Form.Control.Feedback>
