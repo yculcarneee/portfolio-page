@@ -49,8 +49,6 @@ export default function Contact() {
             else {
                 setMessageError(false)
             }
-
-        //    return isError;
            resolve(isError)
         })
     }
@@ -62,15 +60,8 @@ const encode = (data: any) => {
 }
 
     const submitForm = async(e: React.FormEvent) => {
-
-        // if(checkValidity()) {
-        //     setName('')
-        //     setEmail('')
-        //     setMessage('')
-        // }
-        
         checkValidity().then((res) => {
-            if(res) {    
+            if(!res) {    
                 fetch("/", {
                     method: "POST",
                     headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -84,20 +75,6 @@ const encode = (data: any) => {
                 setMessage('')
             }
         })
-
-        // if(res) {    
-        //     fetch("/", {
-        //         method: "POST",
-        //         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        //         body: encode({ "form-name": "contact", "name": name, "email": email, "message": message })
-        //     })
-        //     .then(() => alert("Success!"))
-        //     .catch(error => alert(error));
-
-        //     setName('')
-        //     setEmail('')
-        //     setMessage('')
-        // }
 
         e.preventDefault()
     }    
