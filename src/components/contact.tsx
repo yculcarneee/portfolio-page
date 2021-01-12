@@ -23,7 +23,7 @@ export default function Contact() {
     const [messageError, setMessageError] = useState(false)
 
     const checkValidity = () => {
-        // return new Promise((resolve, reject) => {
+        return new Promise((resolve, reject) => {
             let isError = false;
 
             if(name.length < 4) {
@@ -50,40 +50,40 @@ export default function Contact() {
                 setMessageError(false)
             }
 
-            return isError;
-        //    resolve(isError)
-        // })
+        //    return isError;
+           resolve(isError)
+        })
     }
     
-// const encode = (data: any) => {
-//     return Object.keys(data)
-//         .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-//         .join("&");
-// }
+const encode = (data: any) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+}
 
     const submitForm = async(e: React.FormEvent) => {
 
-        if(checkValidity()) {
-            setName('')
-            setEmail('')
-            setMessage('')
-        }
+        // if(checkValidity()) {
+        //     setName('')
+        //     setEmail('')
+        //     setMessage('')
+        // }
         
-        // checkValidity().then((res) => {
-        //     if(res) {    
-        //         fetch("/", {
-        //             method: "POST",
-        //             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        //             body: encode({ "form-name": "contact", "name": name, "email": email, "message": message })
-        //         })
-        //         .then(() => alert("Success!"))
-        //         .catch(error => alert(error));
+        checkValidity().then((res) => {
+            if(res) {    
+                fetch("/", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: encode({ "form-name": "contact", "name": name, "email": email, "message": message })
+                })
+                .then(() => alert("Success!"))
+                .catch(error => alert(error));
 
-        //         setName('')
-        //         setEmail('')
-        //         setMessage('')
-        //     }
-        // })
+                setName('')
+                setEmail('')
+                setMessage('')
+            }
+        })
 
         // if(res) {    
         //     fetch("/", {
