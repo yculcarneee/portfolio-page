@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { useState } from "react";
+import MessageToast from "./toast";
 
 
 export default function Contact() {
@@ -21,6 +22,8 @@ export default function Contact() {
 
     const [message, setMessage] = useState('')
     const [messageError, setMessageError] = useState(false)
+
+    const [showToast, setShowToast] = useState(false);
 
     const checkValidity = () => {
         return new Promise((resolve, reject) => {
@@ -53,11 +56,11 @@ export default function Contact() {
         })
     }
     
-const encode = (data: any) => {
-    return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&");
-}
+    const encode = (data: any) => {
+        return Object.keys(data)
+            .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+            .join("&");
+    }
 
     const submitForm = async(e: React.FormEvent) => {
         checkValidity().then((res) => {
@@ -67,7 +70,9 @@ const encode = (data: any) => {
                     headers: { "Content-Type": "application/x-www-form-urlencoded" },
                     body: encode({ "form-name": "contact", "name": name, "email": email, "message": message })
                 })
-                .then(() => alert("Success!"))
+                .then(() => {
+                    setShowToast(true);
+                })
                 .catch(error => alert(error));
 
                 setName('')
@@ -140,6 +145,7 @@ const encode = (data: any) => {
                         <Row className="justify-content-center heading-row">
                             <footer className="footer-text"> © Yash Kulkarni. All rights reserved. <br/> Designed by Yash Kulkarni </footer>
                         </Row>
+                        <MessageToast showToast={showToast} setShowToast={setShowToast}/>
                     </Container>
                 </Card.Body>
             </Card>
