@@ -7,7 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { useState } from "react";
-import MessageToast from "./toast";
+import SuccessMessageToast from "./success-toast";
+import FailureMessageToast from "./failure-toast";
 
 
 export default function Contact() {
@@ -23,7 +24,8 @@ export default function Contact() {
     const [message, setMessage] = useState('')
     const [messageError, setMessageError] = useState(false)
 
-    const [showToast, setShowToast] = useState(false);
+    const [showSuccessToast, setShowSuccessToast] = useState(false);
+    const [showFailureToast, setShowFailureToast] = useState(false);
 
     const checkValidity = () => {
         return new Promise((resolve, reject) => {
@@ -65,15 +67,17 @@ export default function Contact() {
     const submitForm = async(e: React.FormEvent) => {
         checkValidity().then((res) => {
             if(!res) {    
-                fetch("/", {
+                fetch("/asd", {
                     method: "POST",
                     headers: { "Content-Type": "application/x-www-form-urlencoded" },
                     body: encode({ "form-name": "contact", "name": name, "email": email, "message": message })
                 })
                 .then(() => {
-                    setShowToast(true);
+                    setShowSuccessToast(true);
                 })
-                .catch(error => alert(error));
+                .catch(error => {
+                    setShowFailureToast(true);
+                });
 
                 setName('')
                 setEmail('')
@@ -145,7 +149,8 @@ export default function Contact() {
                         <Row className="justify-content-center heading-row">
                             <footer className="footer-text"> © Yash Kulkarni. All rights reserved. <br/> Designed by Yash Kulkarni </footer>
                         </Row>
-                        <MessageToast showToast={showToast} setShowToast={setShowToast}/>
+                        <SuccessMessageToast showToast={showSuccessToast} setShowToast={setShowSuccessToast}/>
+                        <FailureMessageToast showToast={showFailureToast} setShowToast={setShowFailureToast}/>
                     </Container>
                 </Card.Body>
             </Card>
