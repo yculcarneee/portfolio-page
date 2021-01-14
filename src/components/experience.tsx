@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../App.css';
-import {Card, Image, Container, Row, Col, Media} from 'react-bootstrap'; 
+import {Card, Image, Container, Row, Media} from 'react-bootstrap'; 
 
 import AWS from '../assets/images/amazon-web-services.png'
 import CP from '../assets/images/collegepond.png'
