@@ -94,13 +94,13 @@ export default function Contact() {
                 <Card.Body id = "contact-card">
                     <Container fluid>
                         <Row className="heading-row" style={{justifyContent: 'center'}}>
-                            <h3> Contact </h3>
+                            <h1> Contact </h1>
                         </Row>
                         <Row className="heading-row" style={{justifyContent: 'center'}}>
                             <Form noValidate onSubmit={submitForm}>
                                 <input type="hidden" name="form-name" value="contact" />
                                 <Form.Group as={Row} controlId="formName">
-                                    <Form.Label column sm={4}>Name</Form.Label>
+                                    <Form.Label column sm={4} style={{fontSize: 'large'}}>Name</Form.Label>
                                     <Col sm={8}>            
                                         <Form.Control name="name" value={name} onChange={e => setName(e.target.value)} placeholder="Enter your name..." isInvalid={nameError}/ >
                                         <Form.Control.Feedback tooltip type="invalid">
@@ -109,7 +109,7 @@ export default function Contact() {
                                     </Col>
                                 </Form.Group>
                                 <Form.Group as={Row} controlId="formEmail">
-                                    <Form.Label column sm={4}>Email</Form.Label>
+                                    <Form.Label column sm={4} style={{fontSize: 'large'}}>Email</Form.Label>
                                     <Col sm={8}>
                                         <Form.Control name="email" value={email} onChange={e => setEmail(e.target.value)} type="email" placeholder="Enter your email..." isInvalid={emailError}/>
                                         <Form.Control.Feedback tooltip type="invalid">
@@ -118,7 +118,7 @@ export default function Contact() {
                                     </Col>
                                 </Form.Group>
                                 <Form.Group as={Row} controlId="formMessage">                                   
-                                    <Form.Label column sm={4}>Message</Form.Label>
+                                    <Form.Label column sm={4} style={{fontSize: 'large'}}>Message</Form.Label>
                                     <Col sm={8}>
                                         <Form.Control name="message" as="textarea" onChange={e => setMessage(e.target.value)} value={message} rows={5} placeholder="Enter your message..." isInvalid={messageError}/>
                                         <Form.Control.Feedback tooltip type="invalid">

@@ -10,13 +10,13 @@ export default function About() {
                 <Card.Body id = 'about-card'>
                     <Container>
                         <Row style={{justifyContent: 'center'}}>
-                            <Image src={Profile} width="155px" height="140px" roundedCircle={true} alt="Yash Kulkarni"/>
+                            <Image src={Profile} className="mt-5 mb-3"  width="150px" height="140px" roundedCircle={true} alt="Yash Kulkarni"/>
                         </Row>
                         <Row className="heading-row" style={{justifyContent: 'center'}}>
-                            <h2>Yash Kulkarni</h2>
+                            <h1>Yash Kulkarni</h1>
                         </Row>
                         <Row className="about-text">
-                            <p>
+                            <p style={{fontSize: 'large'}}>
                                 Hello, I'm Yash, a software developer with experience in development using C++ and Python and web technologies such as React, Node.js, Express, etc.                                 
                                 <br/> <br/>
                                 I recently completed my Master of Computer Science degree at the University of California - Irvine. I interned at Amazon Web Services in Summer 2020, where I developed a system that automates UI testing for developers in the AWS Console team. I have a strong background in Data Structures and Algorithms, along with a keen interest in Machine Learning and Artificial Intelligence.

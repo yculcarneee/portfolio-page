@@ -12,16 +12,20 @@ export default function Projects() {
                 <Card.Body id = "projects-card">
                     <Container>
                         <Row className="heading-row" style={{justifyContent: 'center'}}>
-                            <h3> Projects </h3>
+                            <h1 className="mt-4 mb-3"> Projects </h1>
                         </Row>
                         <Row className="heading-row" style={{justifyContent: 'center'}}>
                             <CardDeck>
                                 <Card className="info-card" style={{width: '20rem', marginBottom: '5vh'}}>
                                     <Card.Img variant="top" src={Dreamcatcher}/>
                                     <Card.Body>
-                                        <Card.Title>Dreamcatcher</Card.Title>
-                                        <Card.Text>
-                                        Dreamcatcher is a community-driven job application tracker where users can search through and keep track of multiple job applications and get more information from their peers about new opportunities.
+                                        <Card.Title>
+                                            <h2>
+                                                Dreamcatcher
+                                            </h2>
+                                        </Card.Title>
+                                        <Card.Text style={{fontSize: 'large'}}>
+                                                Dreamcatcher is a community-driven job application tracker where users can search through and keep track of multiple job applications and get more information from their peers about new opportunities.
                                         </Card.Text>
                                     </Card.Body>
                                     <Card.Footer>
@@ -32,8 +36,12 @@ export default function Projects() {
                                 <Card className="info-card" style={{width: '20rem', marginBottom: '5vh'}}>
                                     <Card.Img variant="top" src={ASL} height="180"/>
                                     <Card.Body>
-                                        <Card.Title>ASL Letter Classifier</Card.Title>
-                                        <Card.Text>
+                                        <Card.Title>
+                                            <h3>
+                                                ASL Letter Classifier
+                                            </h3>
+                                        </Card.Title>
+                                        <Card.Text style={{fontSize: 'large'}}>
                                             ASL Letter Classifier is a web app that can classify and translate 26 English ASL alphabets as well as 3 special gestures into text using our camera feed.
                                         </Card.Text>
                                     </Card.Body>
