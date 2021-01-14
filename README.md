@@ -1,5 +1,7 @@
 # Yash Kulkarni - Portfolio Page (WIP)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8fd91754-8baf-4ec3-885f-fbb7461fa779/deploy-status)](https://app.netlify.com/sites/yash-kulkarni-portfolio/deploys)
+
 This repo contains the code for my portflio website. 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
